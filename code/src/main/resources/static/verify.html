@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Account - Reading Log System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Reading Log System</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section class="auth-section">
+      <h2>Verify Your Account</h2>
+      <p>Please enter the verification code sent to your email.</p>
+      
+      <form id="verifyForm" class="auth-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="token">Verification Code</label>
+          <input type="text" id="token" name="token" required>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Verify Account</button>
+          <p>Already verified? <a href="login.html">Login here</a></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Reading Log System. All rights reserved.</p>
+  </footer>
+
+  <script src="verify.js"></script>
+</body>
+</html>

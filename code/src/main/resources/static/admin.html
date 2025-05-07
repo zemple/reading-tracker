@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Reading Log System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Reading Log System - Admin Panel</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li id="adminMenu"><a href="admin.html">Admin Panel</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <div id="userMenu">
+          <!-- Populated by JavaScript -->
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Admin Overview Section -->
+    <section id="admin-overview">
+      <h2>System Overview</h2>
+      <div class="stats">
+        <div class="card">Total Logs: <span id="logCount">0</span></div>
+        <div class="card">Locked Users: <span id="lockedCount">0</span></div>
+        <div class="card">Flagged Logs: <span id="flaggedCount">0</span></div>
+        <div class="card">Total Users: <span id="userCount">0</span></div>
+        <div class="card progress-card">
+          <h3>User Activity</h3>
+          <div class="progress-bar" id="userActivityBar">
+            <div class="progress-bar-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- User Management Section -->
+    <section id="user-management">
+      <div class="section-header">
+        <h2>User Management</h2>
+      </div>
+
+      <!-- User Filter -->
+      <div class="filter-section">
+        <form id="userFilterForm" class="filter-form">
+          <div class="filter-group">
+            <label for="filterUsername">Username:</label>
+            <input type="text" id="filterUsername" name="username">
+          </div>
+          
+          <div class="filter-group">
+            <label for="filterStatus">Status:</label>
+            <select id="filterStatus" name="status">
+              <option value="">All</option>
+              <option value="locked">Locked</option>
+              <option value="unlocked">Unlocked</option>
+              <option value="verified">Verified</option>
+              <option value="unverified">Unverified</option>
+            </select>
+          </div>
+          
+          <div class="filter-actions">
+            <button type="submit" class="btn small">Apply</button>
+            <button type="reset" class="btn small secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- User List -->
+      <ul id="userList" class="user-list">
+        <!-- Users will be populated by JavaScript -->
+      </ul>
+    </section>
+
+    <!-- Log Management Section -->
+    <section id="log-management">
+      <div class="section-header">
+        <h2>Reading Log Management</h2>
+      </div>
+
+      <!-- Log Filter -->
+      <div class="filter-section">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search by title...">
+        </div>
+        
+        <form id="filterForm" class="filter-form">
+          <div class="filter-group">
+            <label for="filterLogAuthor">Author:</label>
+            <input type="text" id="filterLogAuthor" name="author">
+          </div>
+          
+          <div class="filter-group">
+            <label for="filterLogDate">Date:</label>
+            <input type="date" id="filterLogDate" name="date">
+          </div>
+          
+          <div class="filter-group">
+            <label for="filterFlagged">Flagged Only:</label>
+            <input type="checkbox" id="filterFlagged" name="flagged">
+          </div>
+          
+          <div class="filter-actions">
+            <button type="submit" class="btn small">Apply</button>
+            <button type="reset" class="btn small secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Log List -->
+      <ul id="logList" class="log-list">
+        <!-- Logs will be populated by JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Reading Log System. All rights reserved.</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

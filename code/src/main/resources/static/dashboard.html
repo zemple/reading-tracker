@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Reading Log System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Reading Log System</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li id="adminMenu" class="hidden"><a href="admin.html">Admin Panel</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <div id="userMenu">
+          <!-- Populated by JavaScript -->
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- User Welcome Section -->
+    <section id="welcome">
+      <h2 id="welcomeMessage">Welcome to your Dashboard!</h2>
+      <div class="stats">
+        <div class="card">Total Logs: <span id="logCount">0</span></div>
+        <div class="card">Flagged Logs: <span id="flaggedCount">0</span></div>
+        <div class="card">Total Users: <span id="userCount">0</span></div>
+      </div>
+    </section>
+
+    <!-- Reading Log Management -->
+    <section id="logging">
+      <div class="section-header">
+        <h2>My Reading Logs</h2>
+        <button id="newLogBtn" class="btn primary">Add New Log</button>
+      </div>
+
+      <!-- Reading Log Form (hidden by default) -->
+      <form id="logForm" class="form hidden">
+        <h3 id="formTitle">Add Reading Log</h3>
+        <input type="hidden" id="logId" value="">
+        
+        <div class="form-group">
+          <label for="bookTitle">Book Title</label>
+          <input type="text" id="bookTitle" name="title" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="bookAuthor">Author</label>
+          <input type="text" id="bookAuthor" name="author" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="readingDate">Date</label>
+          <input type="date" id="readingDate" name="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="timeSpent">Time Spent (minutes)</label>
+          <input type="number" id="timeSpent" name="timeSpent" min="1" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" id="submitLog" class="btn primary">Add Log</button>
+          <button type="button" id="cancelLog" class="btn secondary">Cancel</button>
+        </div>
+      </form>
+
+      <!-- Search and Filter -->
+      <div class="filter-section">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search by title...">
+        </div>
+        
+        <form id="filterForm" class="filter-form">
+          <div class="filter-group">
+            <label for="authorFilter">Author:</label>
+            <input type="text" name="author" id="authorFilter">
+          </div>
+          
+          <div class="filter-group">
+            <label for="dateFilter">Date:</label>
+            <input type="date" name="date" id="dateFilter">
+          </div>
+          
+          <div class="filter-group">
+            <label for="minTimeFilter">Min Time:</label>
+            <input type="number" name="minTime" id="minTimeFilter" min="0">
+          </div>
+          
+          <div class="filter-group">
+            <label for="maxTimeFilter">Max Time:</label>
+            <input type="number" name="maxTime" id="maxTimeFilter" min="0">
+          </div>
+          
+          <div class="filter-actions">
+            <button type="submit" class="btn small">Apply</button>
+            <button type="reset" id="resetFilter" class="btn small secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Reading Logs List -->
+      <ul id="logList" class="log-list">
+        <!-- Logs will be populated by JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Reading Log System. All rights reserved.</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

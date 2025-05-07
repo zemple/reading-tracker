@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Log System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Reading Log System</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li id="adminMenu" class="hidden"><a href="admin.html">Admin Panel</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <div id="userMenu">
+          <a href="login.html">Login</a> | 
+          <a href="register.html">Register</a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Overview Section -->
+    <section id="overview">
+      <h2>System Overview</h2>
+      <div class="stats">
+        <div class="card">Total Logs: <span id="logCount">0</span></div>
+        <div class="card">Locked Users: <span id="lockedCount">0</span></div>
+        <div class="card">Flagged Logs: <span id="flaggedCount">0</span></div>
+        <div class="card">Total Users: <span id="userCount">0</span></div>
+        <div class="card progress-card">
+          <h3>User Activity</h3>
+          <div class="progress-bar" id="userActivityBar">
+            <div class="progress-bar-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h3>Track Your Reading</h3>
+          <p>Log your daily reading activities including book details, time spent, and personal notes.</p>
+        </div>
+        <div class="feature">
+          <h3>Monitor Progress</h3>
+          <p>View your reading history and track your progress over time with intuitive charts and statistics.</p>
+        </div>
+        <div class="feature">
+          <h3>Secure Account</h3>
+          <p>Create your account with email verification and keep your reading data safe and private.</p>
+        </div>
+        <div class="feature">
+          <h3>Advanced Search</h3>
+          <p>Search and filter your reading logs by title, author, date, and reading time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity Section -->
+    <section id="recent">
+      <h2>Recent Reading Activity</h2>
+      <div class="columns">
+        <div class="column">
+          <h3>Latest Logs</h3>
+          <ul id="logList" class="list">
+            <!-- Logs will be populated by JavaScript -->
+          </ul>
+        </div>
+        <div class="column">
+          <h3>Active Users</h3>
+          <ul id="userList" class="list">
+            <!-- Users will be populated by JavaScript -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Reading Log System. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
